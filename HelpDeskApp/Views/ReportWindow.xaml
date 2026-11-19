@@ -1,0 +1,57 @@
+﻿<Window x:Class="HelpDeskApp.Views.ReportWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HelpDeskApp.Views"
+        mc:Ignorable="d"
+        Title="Tagesbericht" Height="600" Width="600"
+        WindowStartupLocation="CenterScreen">
+        
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <!-- Bericht -->
+            <RowDefinition Height="Auto"/>
+            <!-- Buttons -->
+        </Grid.RowDefinitions>
+        <!-- Bericht Text -->
+        <TextBox Grid.Row="0"
+                 x:Name="ReportTextBox"
+                 IsReadOnly="True"
+                 TextWrapping="Wrap"
+                 VerticalScrollBarVisibility="Auto"
+                 Background="AliceBlue"
+                 Foreground="DarkBlue"
+                 FontFamily="Courier New"
+                 FontSize="14"
+                 Padding="10"/>
+
+        <!-- Buttons -->
+        <StackPanel Grid.Row="1" 
+                    Orientation="Horizontal" 
+                    HorizontalAlignment="Center"
+                    Margin="0,10,0,0">
+
+            <Button x:Name="PdfExportButton"
+                    Content="📄 Als PDF exportieren"
+                    Margin="10"
+                    Padding="10"
+                    Background="DarkBlue"
+                    Foreground="White"
+                    FontSize="14"
+                    FontWeight="Bold"
+                    Click="PdfExportButton_Click"/>
+
+            <Button x:Name="SchliessenButton"
+                    Content="✖ Schließen"
+                    Margin="10"
+                    Padding="10"
+                    Background="DarkRed"
+                    Foreground="White"
+                    FontSize="14"
+                    FontWeight="Bold"
+                    Click="SchliessenButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
